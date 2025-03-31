@@ -1,7 +1,10 @@
-*
-!README.md
-!early-init.el
-!init.el
-!.images/
-!.github/
-!.LICENSE
+.DS_Store
+.cache/
+.github/
+autosave/
+elpa/
+history
+forge-database.sqlite
+projects
+transient
+.chatgpt-shell.el
