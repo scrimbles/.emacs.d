@@ -7,6 +7,15 @@
 
 (setq-default indent-tabs-mode nil)
 
+;;; Clojure
+;; CIDER is considered the best clojure mode for emacs
+;; think SLIME for clojure
+(use-package cider
+  :ensure t)
+
+;; Register Clojure with eglot
+(add-hook 'clojure-mode-hook #'eglot-ensure)
+
 
 ;;; LISP
 ;; no tabs in lisp
@@ -16,7 +25,8 @@
 (add-hook 'lisp-mode-hook #'prettify-symbols-mode)
 
 (use-package sly
-  :ensure t)
+  :ensure t
+  :config (setq inferior-lisp-program "ros dynamic-space-size=8192 -- -Q run"))
 
 
 (provide 'lisp-ide)

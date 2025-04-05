@@ -25,6 +25,10 @@
   :config
   (global-hl-todo-mode 1))
 
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (use-package ligature
   :config
   ;; Enable the "www" ligature in every possible major mode

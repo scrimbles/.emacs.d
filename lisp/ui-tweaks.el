@@ -32,14 +32,36 @@
   (doom-themes-org-config))
 (load-theme 'doom-one t)
 
-(use-package doom-modeline
+(use-package base-line
+  :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
   :ensure t
-  :hook (after-init . doom-modeline-mode)
-  :config
-  (setq doom-modeline-height 35)
-  (doom-modeline-def-modeline 'main
-    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-    '(misc-info minor-modes input-method buffer-encoding major-mode process vcs "  ")))
+  :hook (after-init . base-line-mode))
+
+(defun starmacs/set-modeline-box-bg (face new-bg)
+  (set-face-attribute face nil
+                      :background new-bg
+                      :box `(:line-width 8 :color ,new-bg)
+                      :overline nil
+                      :underline nil))
+
+(defun starmacs/fix-modeline ()
+  (interactive)
+  (starmacs/set-modeline-box-bg 'mode-line-active (face-background 'mode-line))
+  (starmacs/set-modeline-box-bg 'mode-line (face-background 'mode-line))
+  (starmacs/set-modeline-box-bg 'mode-line-inactive (face-background 'mode-line-inactive)))
+
+(starmacs/fix-modeline)
+
+(setq visible-bell t)
+(setq ring-bell-function
+      (lambda ()
+        (let ((orig-bg (face-background 'mode-line-active)))
+          (set-face-background 'mode-line-active "#ef8e49")
+          (starmacs/set-modeline-box-bg 'mode-line-active "#ef8e49")
+          (run-with-idle-timer 0.1 nil
+                               (lambda (bg) (progn (set-face-background 'mode-line-active bg)
+                                                   (starmacs/set-modeline-box-bg 'mode-line-active bg)))
+                               orig-bg))))
 
 
 ;; Trailing whitespace should be highlighted, and deleted on save.
