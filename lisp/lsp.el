@@ -17,31 +17,24 @@
    ("<f12>" . eglot-find-typeDefinition)
    ("<f2>" . eglot-rename))
   :hook
+  (js-mode . eglot-ensure)
   (typescript-mode . eglot-ensure)
   (typescript-ts-mode . eglot-ensure)
+  (typescriptreact-mode . eglot-ensure)
   (tsx-ts-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
   (go-ts-mode . eglot-ensure)
   (f90-mode . eglot-ensure)
   (zig-mode . eglot-ensure)
-  :config (setq lsp-prefer-flymake nil))
+  :config
+  (setq lsp-prefer-flymake nil)
+  (cl-pushnew '((js-mode typescript-mode typescriptreact-mode) . ("typescript-language-server" "--stdio"))
+              eglot-server-programs
+              :test #'equal))
 
 (use-package eldoc-box
   :hook
   (eglot-managed-mode . eldoc-box-hover-mode))
-
-
-(use-package eglot
-  :ensure t
-  :defer 3
-  :hook
-  ((js-mode
-    typescript-mode
-    typescriptreact-mode) . eglot-ensure)
-  :config
-  (cl-pushnew '((js-mode typescript-mode typescriptreact-mode) . ("typescript-language-server" "--stdio"))
-              eglot-server-programs
-              :test #'equal))
 
 ;;; Python
 (use-package python-black

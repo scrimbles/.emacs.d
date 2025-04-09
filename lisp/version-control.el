@@ -20,13 +20,5 @@
   ("C-c b" . why-this-mode)
   ("C-c w" . why-this))
 
-
-(use-package why-this
-  :ensure t
-  :custom (why-this-idle-delay 0)
-  :bind
-  ("C-c b" . why-this-mode)
-  ("C-c w" . why-this))
-
 (provide 'version-control)
 ;;; version-control.el ends here

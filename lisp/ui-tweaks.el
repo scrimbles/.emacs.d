@@ -82,7 +82,26 @@
  '(whitespace-tab((t (:foreground "#525252"))))
  '(whitespace-newline((t (:foreground "#525252")))))
 
+;; CUSTOM FONTS
+(defvar starmacs/fixed-pitch-height 120)
+(defvar starmacs/variable-pitch-height 130)
 
+
+(defvar starmacs/variable-pitch-font "Mona Sans")
+(defvar starmacs/title-font "Hubot-Sans")
+(defvar starmacs/fixed-pitch-font "Berkeley Mono")
+
+(set-face-attribute 'default nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
+(set-face-attribute 'fixed-pitch nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
+
+(set-face-attribute 'variable-pitch nil :font starmacs/variable-pitch-font :height starmacs/variable-pitch-height)
+(set-face-attribute 'mode-line nil
+                    :font starmacs/fixed-pitch-font)
+
+;; Ensure that comments are italic to further distinguish them
+(progn                                  ; TODO: figure out a non-ridiculous way to accomplish this
+  (set-face-italic 'font-lock-comment-face t)
+  (set-face-italic 'font-lock-doc-face t))
 
 (provide 'ui-tweaks)
 ;;; ui-tweaks.el ends here
