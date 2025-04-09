@@ -5,6 +5,7 @@
 (require 'modernity)  ; overhaul the basic user experience (vertico, consult, project, etc.)
 (require 'ui-tweaks)  ; theme and other cosmetic changes
 (require 'tree)
+(require 'version-control)
 
 (require 'lisp-ide)   ; settings for better LISP development (including elisp)
 (require 'lsp)        ; modern LSP usage, like any modern editor

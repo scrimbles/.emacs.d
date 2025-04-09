@@ -8,3 +8,4 @@ forge-database.sqlite
 projects
 transient
 .chatgpt-shell.el
+/lisp/chatgpt-api-key.txt

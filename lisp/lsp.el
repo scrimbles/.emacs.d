@@ -119,7 +119,6 @@
 ;;; LaTeX
 (use-package tex
   :defer t
-  :straight auctex
   :ensure auctex
   :config
   (setq TeX-auto-save t)
@@ -128,19 +127,11 @@
 
 (use-package preview-latex
   :defer t
-  :straight auctex
   :ensure auctex)
 
 ;;; Protobuf
 (use-package protobuf-mode
-  :straight t)
-
-;;; Godot
-(use-package gdscript-mode
-  :straight (gdscript-mode
-             :type git
-             :host github
-             :repo "godotengine/emacs-gdscript-mode"))
+  :ensure t)
 
 ;;; Fortran 90+
 (add-to-list 'eglot-server-programs '(f90-mode . ("fortls" "--notify_init" "--nthreads=4")))

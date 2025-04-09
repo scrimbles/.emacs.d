@@ -5,21 +5,6 @@
 ;;
 ;;; Code:
 
-(use-package magit
-  :ensure t)
-
-;; forge allows magit to connect to Github
-(use-package forge
-  :ensure t
-  :after magit)
-
-(use-package why-this
-  :ensure t
-  :custom (why-this-idle-delay 0)
-  :bind
-  ("C-c b" . why-this-mode)
-  ("C-c w" . why-this))
-
 (use-package hl-todo
   :ensure t
   :config

@@ -1,26 +1,9 @@
-;;; completion.el --- Completion-related config (company, copilot, etc.)
+;;; completion.el --- Completion-related config (company)
 ;;
 ;;; Commentary:
 ;; Author: M Cooper Healy
 ;;
 ;;; Code:
-
-;; (setq *starmacs/copilot-enabled* t)
-;;
-;; (defun starmacs/copilot-mode-hook ()
-;;   (when (and (boundp '*starmacs/copilot-enabled*)
-;;              *starmacs/copilot-enabled*)
-;;     copilot-mode-hook))
-;;
-;; (use-package copilot
-;;   :vc (:url "github.com/zerolfx/copilot.el")
-;;   :hook (prog-mode . copilot-mode)
-;;   :config
-;;   (define-key copilot-completion-map (kbd "C-f") 'copilot-accept-completion) ; using forward motion to accept completion like Warp
-;;   (define-key copilot-completion-map (kbd "<right>") 'copilot-accept-completion)
-;;   (unless (copilot-installed-version)
-;;   (copilot-install-server))
-;;   :ensure t)
 
 (use-package company
   :ensure t
