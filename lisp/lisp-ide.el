@@ -26,6 +26,7 @@
 
 (use-package sly
   :ensure t
+  :hook (sly-mrepl-mode . (lambda () (display-line-numbers-mode -1)))
   :config (setq inferior-lisp-program "ros dynamic-space-size=8192 -- -Q run"))
 
 

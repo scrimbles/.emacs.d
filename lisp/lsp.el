@@ -72,6 +72,7 @@
   (apheleia-global-mode t))
 
 
+
 ;;; Julia
 (use-package vterm :ensure t)
 (use-package julia-repl)
@@ -150,16 +151,14 @@
     (eldoc-mode 1)
     (tide-hl-identifier-mode 1))
 
-  ;; (with-eval-after-load 'js2-mode
-  ;;   (flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append)
-  ;;   (flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append)
-  ;;   )
+  (with-eval-after-load 'js2-mode
+    (flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append)
+    (flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append))
 
-  ;; (with-eval-after-load 'rjsx-mode
-  ;;   (add-hook 'rjsx-mode-hook #'setup-tide-mode)
-  ;;   (flycheck-disable-checker 'javascript-jshint)
-  ;;   (flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
-  ;;   )
+  (with-eval-after-load 'rjsx-mode
+    (add-hook 'rjsx-mode-hook #'setup-tide-mode)
+    (flycheck-disable-checker 'javascript-jshint)
+    (flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append))
 
   :config
   (setq tide-format-options

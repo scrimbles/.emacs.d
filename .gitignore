@@ -10,3 +10,5 @@ transient
 .chatgpt-shell.el
 /lisp/chatgpt-api-key.txt
 /custom.el
+/games/
+/tramp
