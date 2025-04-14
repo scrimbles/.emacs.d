@@ -25,7 +25,7 @@
            (width (car size))
            (top-margin (floor (/ (- (window-height) height 3) 2)))
            (left-margin (floor (/ (- (window-width) width) 2)))
-           (title "Emacs: A hackable text editor for the 21st Century!"))
+           (title "A hackable text editor for the 21st Century!"))
       (erase-buffer)
       (setq mode-line-format nil)
       (goto-char (point-min))
