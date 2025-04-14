@@ -6,8 +6,6 @@
 ;;; Code:
 
 (set-fringe-mode 10)        ; Give some breathing room
-;; (toggle-frame-maximized)    ; Always start maximized
-(set-frame-size (selected-frame) 200 55) ; Start at a /reasonable/ size
 (column-number-mode)
 (global-display-line-numbers-mode t)
 (pixel-scroll-precision-mode 1)
