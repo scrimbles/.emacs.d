@@ -1,4 +1,4 @@
-;;; packages.el --- Misc packages with minimal config
+;;; packages.el --- Misc packages with minimal config -*- lexical-binding: t -*-
 ;;
 ;;; Commentary:
 ;; Author: M Cooper Healy
