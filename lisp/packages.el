@@ -5,6 +5,18 @@
 ;;
 ;;; Code:
 
+(use-package sql
+  :ensure nil
+  :defer
+  :custom
+  (sql-sqlite-options '("-header" "-box"))
+  :init
+  (setq sql-postgres-login-params
+        '((user :default "ny_web_api")
+          (database :default "ny")
+          (server :default "localhost")
+          (port :default 5444))))
+
 (use-package hl-todo
   :ensure t
   :config

@@ -12,3 +12,6 @@ transient
 /custom.el
 /games/
 /tramp
+/.org-id-locations
+/bookmarks
+*.db
