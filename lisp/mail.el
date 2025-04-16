@@ -1,4 +1,4 @@
-;;; mail.el --- Mail configuration via mu4e -*- lexical-binding: t -*-
+;;; mail.el --- email configuration -*- lexical-binding: t -*-
 ;;
 ;;; Commentary:
 ;; Author: M Cooper Healy

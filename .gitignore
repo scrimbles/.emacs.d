@@ -16,3 +16,4 @@ transient
 /bookmarks
 *.db
 /newsticker/
+/url/

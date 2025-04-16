@@ -1,4 +1,7 @@
 ;;; post-init.el --- DESCRIPTION -*- no-byte-compile: t; lexical-binding: t; -*-
+;;; Commentary:
+;;; Author: M Cooper Healy <m.cooper.healy@gmail.com
+;;; Code:
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
@@ -17,5 +20,7 @@
 
 ;; (require 'keymap)
 (require 'packages)   ; misc packages that require little enough configuration that they don't require their own module
+(require 'news)       ; configure `Newstcker'
 
 (require 'welcome)    ; welcome dashboard a la Doom, but with /waaaaaay/ fewer moving parts
+;;; post-init.el ends here
