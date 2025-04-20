@@ -1,7 +1,7 @@
 ;;; packages.el --- Misc packages with minimal config -*- lexical-binding: t -*-
 ;;
 ;;; Commentary:
-;; Author: M Cooper Healy
+;;  Author: M Cooper Healy
 ;;
 ;;; Code:
 
@@ -45,7 +45,7 @@
                                        "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
                                        "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
                                        "?=" "?." "??" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
-                                       "\\\\" "://" "<-"))
+                                       "\\\\" "://" "<-" ";;" ";;;"))
   ;; Enables ligature checks globally in all buffers. You can also do it
   ;; per mode with `ligature-mode'.
   (global-ligature-mode t))
