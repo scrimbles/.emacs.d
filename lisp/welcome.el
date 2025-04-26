@@ -1,4 +1,4 @@
-;;; welcome.el --- A minimal spash screen, for aesthetics
+;;; welcome.el --- A minimal spash screen, for aesthetics -*- lexical-binding: t -*-
 ;;
 ;;; Commentary:
 ;; Author: M Cooper Healy
