@@ -1,4 +1,4 @@
-;;; lsp.el --- All of my language-specific configuration for `eglot'
+;;; lsp.el --- All of my language-specific configuration for `eglot' -*-lexical-binding: t -*-
 ;;
 ;;; Commentary:
 ;; Author: M Cooper Healy
@@ -9,6 +9,12 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+(use-package tree-sitter
+  :ensure t)
+
+(use-package tree-sitter-langs
+  :ensure )
 
 ;;; Basic `eglot' setup
 (use-package eglot
@@ -23,7 +29,6 @@
   (typescriptreact-mode . eglot-ensure)
   (tsx-ts-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
-  (go-ts-mode . eglot-ensure)
   (f90-mode . eglot-ensure)
   (zig-mode . eglot-ensure)
   :config
@@ -100,9 +105,11 @@
   :hook
   (go-mode . eglot-ensure)
   (go-mode . tree-sitter-hl-mode)
+  (go-ts-mode . eglot-ensure)
   :config
   (setq go-ts-indent-level 4))
 
+;;; Zig
 (use-package zig-mode
   :ensure t
   :mode ("\\.zig\\'")
