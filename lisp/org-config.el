@@ -28,7 +28,8 @@
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture))
   :config
-  (org-roam-db-autosync-enable))
+  (org-roam-db-autosync-enable)
+  (set-face-attribute 'org-table nil :inherit 'fixed-pitch))
 
 (provide 'org-config)
 ;;; org-config.el ends here
