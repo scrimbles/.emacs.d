@@ -60,6 +60,7 @@
         '(npx "prettier"
               "--trailing-comma"  "all"
               "--arrow-parens"    "always"
+              "--printWidth"      "120"
               "--tab-width"       "2"
               "--single-quote"    "true"
               "--semi"            "true"
