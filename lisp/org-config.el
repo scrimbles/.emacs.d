@@ -16,7 +16,8 @@
   :custom
   (org-startup-with-inline-images t)
   (org-hide-emphasis-markers t)
-  (org-pretty-entities t))
+  (org-pretty-entities t)
+  (org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "REVIEW" "|" "DONE" "REJECTED"))))
 
 (use-package org-roam
   :ensure t
