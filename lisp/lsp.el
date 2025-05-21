@@ -65,6 +65,7 @@
               "--single-quote"    "true"
               "--semi"            "true"
               "--use-tabs"        "false"
+              "--bracketSpacing"  "true"
               file))
   (setf (alist-get 'clj-zprint apheleia-formatters)
         '("clj-zprint"
@@ -140,7 +141,7 @@
 
 ;;; EXPERIMENT
 (use-package tide
-  :commands (tide-mode tide-format-before-save)
+  :commands (tide-mode)
   :functions setup-tide-mode
   :diminish tide-mode
   :after (company flycheck)
@@ -148,7 +149,6 @@
          (rjsx-mode . setup-tide-mode)
          (typescript-mode . setup-tide-mode)
          (typescriptreact-mode . setup-tide-mode)
-         (before-save . tide-format-before-save)
          (web-mode . (lambda () (when (or (string= "tsx" web-mode-content-type) (string= "jsx" web-mode-content-type)) (setup-tide-mode)))))
   :init
   (defun setup-tide-mode ()

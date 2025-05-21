@@ -17,6 +17,10 @@
         ("Hacker News"
          "https://hnrss.org/newest?q=lisp+OR+emacs"
          nil
+         3600)
+        ("Analog Nowhere"
+         "https://analognowhere.com/feed/rss.xml"
+         nil
          3600)))
 
 

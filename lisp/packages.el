@@ -44,11 +44,16 @@
                                        ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
                                        "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
                                        "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
-                                       "?=" "?." "??" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                       "?=" "?." "??" "/=" "/>" "//" "__" "~~" "(*" "*)"
                                        "\\\\" "://" "<-" ";;" ";;;"))
   ;; Enables ligature checks globally in all buffers. You can also do it
   ;; per mode with `ligature-mode'.
   (global-ligature-mode t))
+
+(use-package erc
+  :hook
+  (erc-mode . erc-scrolltobottom-mode)
+  (erc-mode . (lambda () (display-line-numbers-mode -1))))
 
 
 (provide 'packages)
