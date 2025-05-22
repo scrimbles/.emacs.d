@@ -21,6 +21,10 @@
         ("Analog Nowhere"
          "https://analognowhere.com/feed/rss.xml"
          nil
+         3600)
+        ("Magic 9 Ball"
+         "https://snac.lab8.cz/magic9ball.rss"
+         nil
          3600)))
 
 
