@@ -24,13 +24,6 @@
     (global-hl-line-mode 1))
 
 ;; ;; Got bit by the Atom bug again (RIP), so I'm gonna give Anisochromatic a break for a while.
-;; (use-package doom-themes
-;;   :ensure t
-;;   :config
-;;   (setq doom-themes-enable-bold t
-;;         doom-themes-enable-italic t)
-;;   (doom-themes-org-config))
-;; (load-theme 'doom-one t)
 (use-package acme-theme
   :config
   (load-theme 'acme t))
@@ -40,12 +33,12 @@
 ;;   :ensure t
 ;;   :hook (after-init . base-line-mode))
 
-(defun starmacs/set-modeline-box-bg (face new-bg)
-  (set-face-attribute face nil
-                      :background new-bg
-                      :box `(:line-width 8 :color ,new-bg)
-                      :overline nil
-                      :underline nil))
+;; (defun starmacs/set-modeline-box-bg (face new-bg)
+;;   (set-face-attribute face nil
+;;                       :background new-bg
+;;                       :box `(:line-width 8 :color ,new-bg)
+;;                       :overline nil
+;;                       :underline nil))
 
 ;; (defun starmacs/fix-modeline ()
 ;;   (interactive)
@@ -55,16 +48,16 @@
 ;;
 ;; (starmacs/fix-modeline)
 
-(setq visible-bell t)
-(setq ring-bell-function
-      (lambda ()
-        (let ((orig-bg (face-background 'mode-line-active)))
-          (set-face-background 'mode-line-active "#ef8e49")
-          (starmacs/set-modeline-box-bg 'mode-line-active "#ef8e49")
-          (run-with-idle-timer 0.1 nil
-                               (lambda (bg) (progn (set-face-background 'mode-line-active bg)
-                                                   (starmacs/set-modeline-box-bg 'mode-line-active bg)))
-                               orig-bg))))
+;; (setq visible-bell t)
+;; (setq ring-bell-function
+;;       (lambda ()
+;;         (let ((orig-bg (face-background 'mode-line-active)))
+;;           (set-face-background 'mode-line-active "#ef8e49")
+;;           (starmacs/set-modeline-box-bg 'mode-line-active "#ef8e49")
+;;           (run-with-idle-timer 0.1 nil
+;;                                (lambda (bg) (progn (set-face-background 'mode-line-active bg)
+;;                                                    (starmacs/set-modeline-box-bg 'mode-line-active bg)))
+;;                                orig-bg))))
 
 
 ;; Trailing whitespace should be highlighted, and deleted on save.
