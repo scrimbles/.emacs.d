@@ -23,19 +23,22 @@
 (if (window-system)
     (global-hl-line-mode 1))
 
-;; Got bit by the Atom bug again (RIP), so I'm gonna give Anisochromatic a break for a while.
-(use-package doom-themes
-  :ensure t
+;; ;; Got bit by the Atom bug again (RIP), so I'm gonna give Anisochromatic a break for a while.
+;; (use-package doom-themes
+;;   :ensure t
+;;   :config
+;;   (setq doom-themes-enable-bold t
+;;         doom-themes-enable-italic t)
+;;   (doom-themes-org-config))
+;; (load-theme 'doom-one t)
+(use-package acme-theme
   :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
-  (doom-themes-org-config))
-(load-theme 'doom-one t)
+  (load-theme 'acme t))
 
-(use-package base-line
-  :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
-  :ensure t
-  :hook (after-init . base-line-mode))
+;; (use-package base-line
+;;   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
+;;   :ensure t
+;;   :hook (after-init . base-line-mode))
 
 (defun starmacs/set-modeline-box-bg (face new-bg)
   (set-face-attribute face nil
@@ -44,13 +47,13 @@
                       :overline nil
                       :underline nil))
 
-(defun starmacs/fix-modeline ()
-  (interactive)
-  (starmacs/set-modeline-box-bg 'mode-line-active (face-background 'mode-line))
-  (starmacs/set-modeline-box-bg 'mode-line (face-background 'mode-line))
-  (starmacs/set-modeline-box-bg 'mode-line-inactive (face-background 'mode-line-inactive)))
-
-(starmacs/fix-modeline)
+;; (defun starmacs/fix-modeline ()
+;;   (interactive)
+;;   (starmacs/set-modeline-box-bg 'mode-line-active (face-background 'mode-line))
+;;   (starmacs/set-modeline-box-bg 'mode-line (face-background 'mode-line))
+;;   (starmacs/set-modeline-box-bg 'mode-line-inactive (face-background 'mode-line-inactive)))
+;;
+;; (starmacs/fix-modeline)
 
 (setq visible-bell t)
 (setq ring-bell-function
@@ -82,13 +85,13 @@
  '(whitespace-newline((t (:foreground "#525252")))))
 
 ;; CUSTOM FONTS
-(defvar starmacs/fixed-pitch-height 120)
+(defvar starmacs/fixed-pitch-height 140)
 (defvar starmacs/variable-pitch-height 130)
 
 
 (defvar starmacs/variable-pitch-font "Mona Sans")
 (defvar starmacs/title-font "Hubot-Sans")
-(defvar starmacs/fixed-pitch-font "Berkeley Mono")
+(defvar starmacs/fixed-pitch-font "VGA Medium")
 
 (set-face-attribute 'default nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 (set-face-attribute 'fixed-pitch nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
