@@ -18,7 +18,11 @@
   :custom (why-this-idle-delay 0)
   :bind
   ("C-c b" . why-this-mode)
-  ("C-c w" . why-this))
+  ("C-c w" . why-this)
+  :config
+  (set-face-foreground 'why-this-face "#007777")
+  (set-face-background 'why-this-annotate-heat-map-cold "#E1FAFF")
+  (set-face-background 'why-this-annotate-heat-map-warm "#F8E8E8"))
 
 (use-package git-gutter
   :hook (prog-mode . git-gutter-mode)

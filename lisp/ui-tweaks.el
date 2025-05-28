@@ -10,6 +10,7 @@
 (global-display-line-numbers-mode t)
 (pixel-scroll-precision-mode 1)
 (setq-default cursor-type '(bar . 2))
+(blink-cursor-mode 1)
 
 ;; Disable line numbers for some modes
 (dolist (mode '(org-mode-hook
