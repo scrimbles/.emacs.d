@@ -19,10 +19,6 @@
                 vterm-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;; Highlight current line
-(if (window-system)
-    (global-hl-line-mode 1))
-
 ;; ;; Got bit by the Atom bug again (RIP), so I'm gonna give Anisochromatic a break for a while.
 (use-package acme-theme
   :config

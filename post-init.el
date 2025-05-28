@@ -7,6 +7,7 @@
 
 (require 'modernity)  ; overhaul the basic user experience (vertico, consult, project, etc.)
 (require 'ui-tweaks)  ; theme and other cosmetic changes
+(require 'acme-mouse) ; BY THE POWER OF GLENDA!
 (require 'tree)
 (require 'version-control)
 (require 'org-config)
