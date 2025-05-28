@@ -1,4 +1,4 @@
-;;; version-control.el --- Settings for git, etc.
+;;; version-control.el --- Settings for git, etc. -*- lexical-binding: t -*-
 ;;
 ;;; Commentary:
 ;; Author: M Cooper Healy
