@@ -22,6 +22,8 @@
 
 ;; ;; Got bit by the Atom bug again (RIP), so I'm gonna give Anisochromatic a break for a while.
 (use-package acme-theme
+  :vc (:url "https://github.com/noonels/emac" :rev :newest)
+  :ensure t
   :config
   (load-theme 'acme t))
 

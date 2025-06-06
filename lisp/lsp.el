@@ -39,7 +39,11 @@
 
 (use-package eldoc-box
   :hook
-  (eglot-managed-mode . eldoc-box-hover-mode))
+  (eglot-managed-mode . eldoc-box-hover-mode)
+  :config
+  (setq eldoc-box-only-multi-line t)
+  (add-hook 'eldoc-box-buffer-setup-hook #'eldoc-box-prettify-ts-errors 0 t))
+
 
 ;;; Python
 (use-package python-black
