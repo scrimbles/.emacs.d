@@ -56,8 +56,8 @@
 (global-whitespace-mode 't)
 
 (custom-set-faces
- '(whitespace-tab((t (:foreground "#525252"))))
- '(whitespace-newline((t (:foreground "#525252")))))
+ '(whitespace-tab((t (:foreground "#B8B09A"))))
+ '(whitespace-newline((t (:foreground "#B8B09A")))))
 
 ;; CUSTOM FONTS
 (defvar starmacs/fixed-pitch-height 140)
