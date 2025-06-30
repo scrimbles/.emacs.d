@@ -67,6 +67,7 @@
 (defvar starmacs/variable-pitch-font "Mona Sans")
 (defvar starmacs/title-font "Hubot-Sans")
 (defvar starmacs/fixed-pitch-font "VGA Medium")
+(defvar starmacs/terminal-font "VGA Medium")
 
 (set-face-attribute 'default nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 (set-face-attribute 'fixed-pitch nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
@@ -76,9 +77,8 @@
                     :font starmacs/fixed-pitch-font)
 
 ;; Ensure that comments are italic to further distinguish them
-(progn                                  ; TODO: figure out a non-ridiculous way to accomplish this
-  (set-face-italic 'font-lock-comment-face t)
-  (set-face-italic 'font-lock-doc-face t))
+(set-face-italic 'font-lock-comment-face t)
+(set-face-italic 'font-lock-doc-face t)
 
 (provide 'ui-tweaks)
 ;;; ui-tweaks.el ends here
