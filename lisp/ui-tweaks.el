@@ -1,4 +1,4 @@
-;;; ui-tweaks.el --- UI QoL changes and theming
+;;; ui-tweaks.el --- UI QoL changes and theming  -*- lexical-binding: t; -*-
 ;;
 ;;; Commentary:
 ;; Author: M Cooper Healy
@@ -20,7 +20,6 @@
                 vterm-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;; ;; Got bit by the Atom bug again (RIP), so I'm gonna give Anisochromatic a break for a while.
 (use-package acme-theme
   :vc (:url "https://github.com/noonels/emac" :rev :newest)
   :ensure t
@@ -60,21 +59,53 @@
  '(whitespace-newline((t (:foreground "#B8B09A")))))
 
 ;; CUSTOM FONTS
-(defvar starmacs/fixed-pitch-height 140)
+(defvar starmacs/fixed-pitch-height 120)
+(defvar starmacs/mode-line-height 150)
 (defvar starmacs/variable-pitch-height 130)
+(defvar starmacs/terminal-font-height 150)
 
 
-(defvar starmacs/variable-pitch-font "Mona Sans")
-(defvar starmacs/title-font "Hubot-Sans")
-(defvar starmacs/fixed-pitch-font "VGA Medium")
+(defvar starmacs/variable-pitch-font "Go")
+(defvar starmacs/title-font "Go Medium")
+(defvar starmacs/fixed-pitch-font "Go Mono")
+(defvar starmacs/mode-line-font "VGA Medium")
 (defvar starmacs/terminal-font "VGA Medium")
+
+
+;;; Create a terminal-face to distinguish interactive elements from code areas
+(defface starmacs/terminal-face
+  '((default :font "VGA Medium" :height starmacs/terminal-font-height))
+  "Adds a little more pizazz to the terms.")
+
+(setq starmacs/terminal-face-remap-cookie
+      (face-remap-add-relative 'default 'starmacs/terminal-face))
+
+(face-remap-remove-relative starmacs/terminal-face-remap-cookie)
+
+(define-minor-mode starmacs/terminal-face-remap-mode
+  "Remap the face for terminal buffers."
+  :local t
+  :init-value nil
+  (if starmacs/terminal-face-remap-mode
+      (setq starmacs/terminal-face-remap-cookie
+            (face-remap-add-relative 'default 'starmacs/terminal-face))
+    (face-remap-remove-relative starmacs/terminal-face-remap-cookie)))
+
+;; use terminal face in terminal-like applications (vterm, erc)
+(add-hook 'vterm-mode-hook #'starmacs/terminal-face-remap-mode)
+(add-hook 'erc-mode-hook #'starmacs/terminal-face-remap-mode)
+
+;; use terminal face when echo-ing to minibuffer
+(with-current-buffer (get-buffer " *Echo Area 0*") ; the leading space character is correct
+  (setq-local face-remapping-alist '((default starmacs/terminal-face))))
 
 (set-face-attribute 'default nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 (set-face-attribute 'fixed-pitch nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 
 (set-face-attribute 'variable-pitch nil :font starmacs/variable-pitch-font :height starmacs/variable-pitch-height)
 (set-face-attribute 'mode-line nil
-                    :font starmacs/fixed-pitch-font)
+                    :font starmacs/mode-line-font
+                    :height starmacs/mode-line-height)
 
 ;; Ensure that comments are italic to further distinguish them
 (set-face-italic 'font-lock-comment-face t)
