@@ -62,8 +62,6 @@
 (defvar starmacs/fixed-pitch-height 120)
 (defvar starmacs/mode-line-height 150)
 (defvar starmacs/variable-pitch-height 130)
-(defvar starmacs/terminal-font-height 150)
-
 
 (defvar starmacs/variable-pitch-font "Go")
 (defvar starmacs/title-font "Go Medium")
@@ -74,7 +72,7 @@
 
 ;;; Create a terminal-face to distinguish interactive elements from code areas
 (defface starmacs/terminal-face
-  '((default :font "VGA Medium" :height starmacs/terminal-font-height))
+  '((default :font "VGA Medium" :height 150))
   "Adds a little more pizazz to the terms.")
 
 (setq starmacs/terminal-face-remap-cookie
