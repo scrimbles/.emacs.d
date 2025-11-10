@@ -104,8 +104,7 @@
 
 (set-face-attribute 'variable-pitch nil :font starmacs/variable-pitch-font :height starmacs/variable-pitch-height)
 (set-face-attribute 'mode-line nil
-                    :font starmacs/mode-line-font
-                    :height starmacs/mode-line-height)
+                    :font starmacs/fixed-pitch-font)
 
 ;; Ensure that comments are italic to further distinguish them
 (set-face-italic 'font-lock-comment-face t)
