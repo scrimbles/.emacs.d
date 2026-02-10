@@ -74,7 +74,7 @@
 
 ;;; Create a terminal-face to distinguish interactive elements from code areas
 (defface starmacs/terminal-face
-  '((default :font "VGA Medium" :height starmacs/terminal-font-height))
+  '((default :font "VGA Medium" :height 150))
   "Adds a little more pizazz to the terms.")
 
 (setq starmacs/terminal-face-remap-cookie
