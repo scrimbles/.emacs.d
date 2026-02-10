@@ -5,8 +5,10 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
+(setq debug-on-error t)
+
 (require 'modernity)  ; overhaul the basic user experience (vertico, consult, project, etc.)
-(require 'ui-tweaks)  ; theme and other cosmetic changes
+;(require 'ui-tweaks)  ; theme and other cosmetic changes
 (require 'acme-mouse) ; BY THE POWER OF GLENDA!
 (require 'tree)
 (require 'version-control)
@@ -24,4 +26,5 @@
 (require 'news)       ; configure `Newstcker'
 
 (require 'welcome)    ; welcome dashboard a la Doom, but with /waaaaaay/ fewer moving parts
+(require 'ui-tweaks)  ; theme and other cosmetic changes
 ;;; post-init.el ends here
