@@ -100,8 +100,8 @@
 
 (setq eglot-jl-julia-command "/usr/local/bin/julia")
 (setq julia-repl-executable-records
-      '((default "/usr/local/bin/julia")
-        (master "/usr/local/bin/julia")))
+      '((default "~/.juliaup/bin/julia")
+        (master "~/.juliaup/bin/julia")))
 
 (setq-default indent-tabs-mode nil)
 
