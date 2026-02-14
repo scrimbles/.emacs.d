@@ -31,6 +31,7 @@
   (python-ts-mode . eglot-ensure)
   (f90-mode . eglot-ensure)
   (zig-mode . eglot-ensure)
+  (haskell-mode . eglot-ensure)
   :config
   (setq lsp-prefer-flymake nil)
   (cl-pushnew '((js-mode typescript-mode typescriptreact-mode) . ("typescript-language-server" "--stdio"))
@@ -102,6 +103,9 @@
 (setq julia-repl-executable-records
       '((default "~/.juliaup/bin/julia")
         (master "~/.juliaup/bin/julia")))
+
+;;; Haskell
+(use-package haskell-mode :ensure t)
 
 (setq-default indent-tabs-mode nil)
 
