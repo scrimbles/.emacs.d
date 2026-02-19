@@ -83,30 +83,6 @@
   (add-to-list 'apheleia-mode-alist '(clojure-mode . clj-zprint))
   (apheleia-global-mode t))
 
-
-
-;;; Julia
-(use-package vterm :ensure t)
-(use-package julia-repl)
-(use-package eglot-jl)
-(use-package julia-mode
-  :mode "\\.jl\\'"
-  :interpreter ("julia" . julia-mode)
-  :init (setenv "JULIA_NUM_THREADS" "6")
-  :config
-  (add-hook 'julia-mode-hook 'julia-repl-mode)
-  (add-hook 'julia-mode-hook 'eglot-jl-init)
-  (add-hook 'julia-mode-hook 'eglot-ensure)
-  (add-hook 'julia-mode-hook (lambda () (setq julia-repl-set-terminal-backend 'vterm))))
-
-(setq eglot-jl-julia-command "/usr/local/bin/julia")
-(setq julia-repl-executable-records
-      '((default "~/.juliaup/bin/julia")
-        (master "~/.juliaup/bin/julia")))
-
-;;; Haskell
-(use-package haskell-mode :ensure t)
-
 (setq-default indent-tabs-mode nil)
 
 ;;; Go
@@ -144,8 +120,6 @@
 (use-package protobuf-mode
   :ensure t)
 
-;;; Fortran 90+
-(add-to-list 'eglot-server-programs '(f90-mode . ("fortls" "--notify_init" "--nthreads=4")))
 
 ;;; EXPERIMENT
 (use-package tide

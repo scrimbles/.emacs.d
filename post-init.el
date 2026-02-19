@@ -8,14 +8,15 @@
 (setq debug-on-error t)
 
 (require 'modernity)  ; overhaul the basic user experience (vertico, consult, project, etc.)
-;(require 'ui-tweaks)  ; theme and other cosmetic changes
 (require 'acme-mouse) ; BY THE POWER OF GLENDA!
 (require 'tree)
 (require 'version-control)
 (require 'org-config)
+(require 'markdown)
 
 (require 'lisp-ide)   ; settings for better LISP development (including elisp)
 (require 'lsp)        ; modern LSP usage, like any modern editor
+(require 'numerical) ; tools for statistical analysis
 (require 'submode)    ; detect embedded SQL and HTML
 
 (require 'completion) ; company, copilot, etc. -- anything that completes user input

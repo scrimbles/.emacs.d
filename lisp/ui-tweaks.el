@@ -17,7 +17,8 @@
                 term-mode-hook
                 shell-mode-hook
                 eshell-mode-hook
-                vterm-mode-hook))
+                vterm-mode-hook
+                comint-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (use-package acme-theme
@@ -94,6 +95,7 @@
 ;; use terminal face in terminal-like applications (vterm, erc)
 (add-hook 'vterm-mode-hook #'starmacs/terminal-face-remap-mode)
 (add-hook 'erc-mode-hook #'starmacs/terminal-face-remap-mode)
+(add-hook 'comint-mode-hook #'starmacs/terminal-face-remap-mode)
 
 ;; use terminal face when echo-ing to minibuffer
 (with-current-buffer (get-buffer " *Echo Area 0*") ; the leading space character is correct
