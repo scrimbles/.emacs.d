@@ -21,16 +21,31 @@
                 comint-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-(use-package acme-theme
-  :vc (:url "https://github.com/noonels/emac" :rev :newest)
+;; (use-package acme-theme
+;;   :vc (:url "https://github.com/noonels/emac" :rev :newest)
+;;   :ensure t
+;;   :config
+;;   (load-theme 'acme t))
+
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'acme t))
+  (load-theme 'doom-one t))
 
-(use-package base-line
-  :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
+;; (use-package base-line
+;;   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
+;;   :ensure t
+;;   :hook (after-init . base-line-mode))
+
+
+(use-package doom-modeline
   :ensure t
-  :hook (after-init . base-line-mode))
+  :hook (after-init . doom-modeline-mode)
+  :config
+  (setq doom-modeline-height 35)
+  (doom-modeline-def-modeline 'main
+    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+    '(misc-info minor-modes input-method buffer-encoding major-mode process vcs "  ")))
 
 (setq visible-bell t)
 (setq ring-bell-function
@@ -63,14 +78,12 @@
 (defvar starmacs/fixed-pitch-height 120)
 (defvar starmacs/mode-line-height 150)
 (defvar starmacs/variable-pitch-height 130)
-(defvar starmacs/terminal-font-height 150)
 
 
 (defvar starmacs/variable-pitch-font "Go")
 (defvar starmacs/title-font "Go Medium")
 (defvar starmacs/fixed-pitch-font "Go Mono")
 (defvar starmacs/mode-line-font "VGA Medium")
-(defvar starmacs/terminal-font "VGA Medium")
 
 
 ;;; Create a terminal-face to distinguish interactive elements from code areas
@@ -106,7 +119,7 @@
 
 (set-face-attribute 'variable-pitch nil :font starmacs/variable-pitch-font :height starmacs/variable-pitch-height)
 (set-face-attribute 'mode-line nil
-                    :font starmacs/fixed-pitch-font)
+                    :font starmacs/mode-line-font :height 150)
 
 ;; Ensure that comments are italic to further distinguish them
 (set-face-italic 'font-lock-comment-face t)
