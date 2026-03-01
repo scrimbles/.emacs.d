@@ -141,5 +141,12 @@
   (setq which-key-idle-delay 1))
 
 
+;; regexp replacing that doesn't make me hate myself
+(use-package visual-regexp
+  :ensure t
+  :bind
+  ([remap query-replace-regexp] . 'vr/query-replace))
+
+
 (provide 'modernity)
 ;;; modernity.el ends here
