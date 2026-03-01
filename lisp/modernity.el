@@ -145,7 +145,16 @@
 (use-package visual-regexp
   :ensure t
   :bind
-  ([remap query-replace-regexp] . 'vr/query-replace))
+  ([remap query-replace-regexp] . vr/query-replace))
+
+(use-package undo-fu
+  :ensure t
+  :bind
+  ([remap undo] . undo-fu-only-undo)
+  ([remap undo-redo] . undo-fu-only-redo))
+
+(use-package vundo
+  :ensure t)
 
 
 (provide 'modernity)
