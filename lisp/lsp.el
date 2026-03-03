@@ -34,6 +34,7 @@
   (haskell-mode . eglot-ensure)
   :config
   (setq lsp-prefer-flymake nil)
+  (setq flymake-show-diagnostics-at-end-of-line t)
   (cl-pushnew '((js-mode typescript-mode typescriptreact-mode) . ("typescript-language-server" "--stdio"))
               eglot-server-programs
               :test #'equal))
