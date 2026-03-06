@@ -32,20 +32,10 @@
   :config
   (load-theme 'doom-one t))
 
-;; (use-package base-line
-;;   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
-;;   :ensure t
-;;   :hook (after-init . base-line-mode))
-
-
-(use-package doom-modeline
+(use-package base-line
+  :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
   :ensure t
-  :hook (after-init . doom-modeline-mode)
-  :config
-  (setq doom-modeline-height 35)
-  (doom-modeline-def-modeline 'main
-    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
-    '(misc-info minor-modes input-method buffer-encoding major-mode process vcs "  ")))
+  :hook (after-init . base-line-mode))
 
 (setq visible-bell t)
 (setq ring-bell-function
@@ -82,7 +72,7 @@
 
 (defvar starmacs/variable-pitch-font "Go")
 (defvar starmacs/title-font "Go Medium")
-(defvar starmacs/fixed-pitch-font "Go Mono")
+(defvar starmacs/fixed-pitch-font "Berkeley Mono")
 (defvar starmacs/mode-line-font "VGA Medium")
 
 
