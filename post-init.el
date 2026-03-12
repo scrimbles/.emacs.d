@@ -3,6 +3,8 @@
 ;;; Author: M Cooper Healy <m.cooper.healy@gmail.com
 ;;; Code:
 
+(load custom-file 'no-error)
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
 (setq debug-on-error t)

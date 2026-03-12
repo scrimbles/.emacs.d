@@ -28,6 +28,7 @@
   (typescript-ts-mode . eglot-ensure)
   (typescriptreact-mode . eglot-ensure)
   (tsx-ts-mode . eglot-ensure)
+  (python-mode . eglot-ensure)
   (python-ts-mode . eglot-ensure)
   (f90-mode . eglot-ensure)
   (zig-mode . eglot-ensure)

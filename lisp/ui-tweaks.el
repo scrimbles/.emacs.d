@@ -30,22 +30,18 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-one t))
+  (load-theme 'doom-one))
 
 (use-package base-line
   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
   :ensure t
   :hook (after-init . base-line-mode))
 
-(setq visible-bell t)
-(setq ring-bell-function
-      (lambda ()
-        (let ((orig-bg (face-background 'mode-line-active)))
-          (set-face-background 'mode-line-active "#ef8e49")
-          (run-with-idle-timer 0.1 nil
-                               (lambda (bg) (set-face-background 'mode-line-active bg))
-                               orig-bg))))
-
+(use-package hot-line
+  :vc (:url "https://github.com/isomatter-labs/hot-line" :rev :newest)
+  :ensure t
+  :config
+  (hot-line-mode 1))
 
 ;; Trailing whitespace should be highlighted, and deleted on save.
 ;; In addition, tabs and newlines should be displayed in a subtle way, allowing for users to more easily check the formatting used.
@@ -76,33 +72,13 @@
 (defvar starmacs/mode-line-font "VGA Medium")
 
 
-;;; Create a terminal-face to distinguish interactive elements from code areas
-(defface starmacs/terminal-face
-  '((default :font "VGA Medium" :height 150))
-  "Adds a little more pizazz to the terms.")
-
-(setq starmacs/terminal-face-remap-cookie
-      (face-remap-add-relative 'default 'starmacs/terminal-face))
-
-(face-remap-remove-relative starmacs/terminal-face-remap-cookie)
-
-(define-minor-mode starmacs/terminal-face-remap-mode
-  "Remap the face for terminal buffers."
-  :local t
-  :init-value nil
-  (if starmacs/terminal-face-remap-mode
-      (setq starmacs/terminal-face-remap-cookie
-            (face-remap-add-relative 'default 'starmacs/terminal-face))
-    (face-remap-remove-relative starmacs/terminal-face-remap-cookie)))
-
-;; use terminal face in terminal-like applications (vterm, erc)
-(add-hook 'vterm-mode-hook #'starmacs/terminal-face-remap-mode)
-(add-hook 'erc-mode-hook #'starmacs/terminal-face-remap-mode)
-(add-hook 'comint-mode-hook #'starmacs/terminal-face-remap-mode)
-
-;; use terminal face when echo-ing to minibuffer
-(with-current-buffer (get-buffer " *Echo Area 0*") ; the leading space character is correct
-  (setq-local face-remapping-alist '((default starmacs/terminal-face))))
+(use-package dont-talk-to-computers
+  :vc (:url "https://github.com/isomatter-labs/dont-talk-to-computers" :rev :newest)
+  :ensure t
+  :custom
+  (dont-talk-to-computers-modes '(vterm-mode-hook comint-mode-hook erc-mode-hook))
+  :config
+  (dont-talk-to-computers-mode 1))
 
 (set-face-attribute 'default nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 (set-face-attribute 'fixed-pitch nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
