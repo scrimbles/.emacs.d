@@ -13,8 +13,7 @@
 (use-package tree-sitter
   :ensure t
   :config
-  (setq major-mode-remap-alist
-        '((python-mode . python-ts-mode))))
+  (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode)))
 
 (use-package tree-sitter-langs
   :ensure )
@@ -51,12 +50,6 @@
   (add-hook 'eldoc-box-buffer-setup-hook #'eldoc-box-prettify-ts-errors 0 t))
 
 
-;;; Python
-(use-package python-black
-  :demand t
-  :after python
-  :hook (python-ts-mode . python-black-on-save-mode-enable-dwim))
-
 ;;; TypeScript
 (use-package web-mode
   :ensure t)
@@ -77,15 +70,10 @@
               "--use-tabs"        "false"
               "--bracketSpacing"  "true"
               file))
-  (setf (alist-get 'clj-zprint apheleia-formatters)
-        '("clj-zprint"
-          "{:style [:community :justified] :map {:comma? false}} <"
-          file))
   (add-to-list 'apheleia-mode-alist '(typescriptreact-mode . prettier))
   (add-to-list 'apheleia-mode-alist '(typescript-mode . prettier))
   (add-to-list 'apheleia-mode-alist '(typescript-ts-mode . prettier))
   (add-to-list 'apheleia-mode-alist '(web-mode . prettier))
-  (add-to-list 'apheleia-mode-alist '(clojure-mode . clj-zprint))
   (apheleia-global-mode t))
 
 (setq-default indent-tabs-mode nil)

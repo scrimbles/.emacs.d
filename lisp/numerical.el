@@ -4,6 +4,38 @@
 ;;; Code:
 
 
+;;; Python
+(use-package python
+  :ensure t
+  :after (eglot apheleia)
+  :config
+  ;; check that pip-installed executables present
+  (unless (executable-find "pipx")
+    (user-error "Executable `pipx' not installed, please install"))
+  (unless (executable-find "ty")
+    (message "Installing `ty' language server for Python")
+    (shell-command "pipx install ty")
+    (message "Installation of `ty' complete"))
+  (unless (executable-find "ruff")
+    (message "Installing `ruff' formatter for Python")
+    (shell-command "pipx install ruff")
+    (message "Installation of `ruff' complete"))
+
+  ;; wire up modes
+  (add-to-list 'auto-mode-alist '("/uv\\.lock\\'" . toml-ts-mode))
+  (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode))
+
+  ;; use `ty' as lsp server
+  (cl-pushnew '((python-mode python-ts-mode) . ("ty" "server"))
+              eglot-server-programs
+              :test #'equal)
+
+  ;; use `ruff' for formatting
+  (setf (alist-get 'python-mode apheleia-mode-alist)
+        '(ruff-isort ruff))
+  (setf (alist-get 'python-ts-mode apheleia-mode-alist)
+        '(ruff-isort ruff)))
+
 ;;; R Markdown
 (use-package poly-markdown
   :ensure t)
