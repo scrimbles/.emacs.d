@@ -11,7 +11,10 @@
   :init (global-flycheck-mode))
 
 (use-package tree-sitter
-  :ensure t)
+  :ensure t
+  :config
+  (setq major-mode-remap-alist
+        '((python-mode . python-ts-mode))))
 
 (use-package tree-sitter-langs
   :ensure )
