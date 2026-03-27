@@ -1,6 +1,10 @@
 (setenv "LIBRARY_PATH" "/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin22/12")
-(add-to-list 'exec-path "~/.ghcup/bin" t)
-(add-to-list 'exec-path "~/.local/bin" t)
+(let ((ghcup-bin (expand-file-name "~/.ghcup/bin")))
+  (add-to-list 'exec-path ghcup-bin t)
+  (setenv "PATH" (concat (getenv "PATH") ":" ghcup-bin)))
+(let ((local-bin (expand-file-name "~/.local/bin")))
+  (add-to-list 'exec-path local-bin t)
+  (setenv "PATH" (concat (getenv "PATH") ":" local-bin)))
 (setq default-frame-alist
       '((height . 55)
         (width . 200)

@@ -27,16 +27,16 @@
 ;;   :config
 ;;   (load-theme 'acme t))
 
-(use-package squeak-theme
-  :vc (:url "https://github.com/isomatter-labs/squeak-theme" :rev :newest)
-  :ensure t
-  :config
-  (load-theme 'squeak t))
-
-;; (use-package doom-themes
+;; (use-package squeak-theme
+;;   :vc (:url "https://github.com/isomatter-labs/squeak-theme" :rev :newest)
 ;;   :ensure t
 ;;   :config
-;;   (load-theme 'doom-one))
+;;   (load-theme 'squeak t))
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-one))
 
 (use-package base-line
   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
@@ -104,13 +104,14 @@
   (indent-bars-width-frac 0.25)
   (indent-bars-pad-frac 0.2)
   (indent-bars-zigzag 0.1)
-  (indent-bars-color-by-depth '(:regexp "outline-\\([0-9]+\\)" :blend 1))
-  (indent-bars-highlight-current-depth '(:pattern "." :pad 0.1 :width 0.45))
+  (indent-bars-color-by-depth '(:regexp "rainbow-delimiters-depth-\\([0-9]+\\)-face" :blend 1))
+  (indent-bars-highlight-current-depth '(:color "white" :blend 0.4 :face (:weight semi-bold)))
   (indent-bars-no-descend-lists 'skip) ; prevent extra bars in nested lists + skip intermediate bars
   (indent-bars-treesit-support t)
   (indent-bars-treesit-ignore-blank-lines-types '("module"))
   (indent-bars-treesit-scope '((python function_definition class_definition for_statement
                                        if_statement with_statement while_statement)))
+  (indent-bars-prefer-character t)
   :hook ((python-base-mode yaml-mode) . indent-bars-mode))
 
 (provide 'ui-tweaks)
