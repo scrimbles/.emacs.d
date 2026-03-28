@@ -41,7 +41,9 @@
 (use-package base-line
   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
   :ensure t
-  :hook (after-init . base-line-mode))
+  :hook (after-init . base-line-mode)
+  :custom
+  (base-line-minor-mode-allowlist '(llm-completion-mode copilot-mode)))
 
 (use-package hot-line
   :vc (:url "https://github.com/isomatter-labs/hot-line" :rev :newest)

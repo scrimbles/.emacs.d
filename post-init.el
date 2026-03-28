@@ -30,4 +30,6 @@
 
 (require 'welcome)    ; welcome dashboard a la Doom, but with /waaaaaay/ fewer moving parts
 (require 'ui-tweaks)  ; theme and other cosmetic changes
+
+(require 'copilot-config)
 ;;; post-init.el ends here
