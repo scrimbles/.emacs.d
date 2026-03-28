@@ -23,21 +23,31 @@
   :bind
   (("s-." . eglot-code-actions)
    ("<f12>" . eglot-find-typeDefinition)
-   ("<f2>" . eglot-rename))
+   ("<f2>" . eglot-rename)
+   ("C-c d" . starmacs/toggle-inline-diagnostics))
   :hook
   (js-mode . eglot-ensure)
   (typescript-mode . eglot-ensure)
   (typescript-ts-mode . eglot-ensure)
   (typescriptreact-mode . eglot-ensure)
   (tsx-ts-mode . eglot-ensure)
-  (python-mode . eglot-ensure)
-  (python-ts-mode . eglot-ensure)
+  (python-base-mode . eglot-ensure)
   (f90-mode . eglot-ensure)
   (zig-mode . eglot-ensure)
   (haskell-mode . eglot-ensure)
   :config
   (setq lsp-prefer-flymake nil)
   (setq flymake-show-diagnostics-at-end-of-line t)
+
+  (defun starmacs/toggle-inline-diagnostics ()
+    "Toggle flymake inline diagnostics at end of line."
+    (interactive)
+    (setq flymake-show-diagnostics-at-end-of-line
+          (not flymake-show-diagnostics-at-end-of-line))
+    (when flymake-mode (flymake-mode 1))
+    (message "Inline diagnostics %s"
+             (if flymake-show-diagnostics-at-end-of-line "enabled" "disabled")))
+
   (cl-pushnew '((js-mode typescript-mode typescriptreact-mode) . ("typescript-language-server" "--stdio"))
               eglot-server-programs
               :test #'equal))
