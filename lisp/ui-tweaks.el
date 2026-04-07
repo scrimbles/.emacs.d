@@ -77,7 +77,7 @@
 (defvar starmacs/variable-pitch-font "Go")
 (defvar starmacs/title-font "Go Medium")
 (defvar starmacs/fixed-pitch-font "Berkeley Mono")
-(defvar starmacs/mode-line-font "VGA Medium")
+(defvar starmacs/mode-line-font "DepartureMono Nerd Font Mono")
 
 
 (use-package dont-talk-to-computers
@@ -93,7 +93,7 @@
 
 (set-face-attribute 'variable-pitch nil :font starmacs/variable-pitch-font :height starmacs/variable-pitch-height)
 (set-face-attribute 'mode-line nil
-                    :font starmacs/mode-line-font :height 150)
+                    :font starmacs/mode-line-font :height 110)
 
 ;; Ensure that comments are italic to further distinguish them
 (set-face-italic 'font-lock-comment-face t)
