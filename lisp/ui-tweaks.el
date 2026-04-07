@@ -77,7 +77,7 @@
 (defvar starmacs/variable-pitch-font "Go")
 (defvar starmacs/title-font "Go Medium")
 (defvar starmacs/fixed-pitch-font "Berkeley Mono")
-(defvar starmacs/mode-line-font "DepartureMono Nerd Font Mono")
+(defvar starmacs/mode-line-font "Go Mono")
 
 
 (use-package dont-talk-to-computers
@@ -88,12 +88,16 @@
   :config
   (dont-talk-to-computers-mode 1))
 
+(set-face-attribute 'dont-talk-to-computers-face nil
+                    :font "DepartureMono Nerd Font Mono"
+                    :height 110)
+
 (set-face-attribute 'default nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 (set-face-attribute 'fixed-pitch nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 
 (set-face-attribute 'variable-pitch nil :font starmacs/variable-pitch-font :height starmacs/variable-pitch-height)
 (set-face-attribute 'mode-line nil
-                    :font starmacs/mode-line-font :height 110)
+                    :font starmacs/mode-line-font :height 120)
 
 ;; Ensure that comments are italic to further distinguish them
 (set-face-italic 'font-lock-comment-face t)
