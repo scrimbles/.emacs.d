@@ -24,6 +24,7 @@
   (set-face-background 'why-this-annotate-heat-map-cold "#E1FAFF")
   (set-face-background 'why-this-annotate-heat-map-warm "#F8E8E8")
   (set-face-attribute 'why-this-face nil
+                      ;; https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DepartureMono.zip
                       :font "DepartureMono Nerd Font Mono"
                       :height 110))
 

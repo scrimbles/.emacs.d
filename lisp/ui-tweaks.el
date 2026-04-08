@@ -73,7 +73,7 @@
 (defvar starmacs/mode-line-height 150)
 (defvar starmacs/variable-pitch-height 130)
 
-
+;; https://github.com/golang/image/tree/master/font/gofont/ttfs
 (defvar starmacs/variable-pitch-font "Go")
 (defvar starmacs/title-font "Go Medium")
 (defvar starmacs/fixed-pitch-font "Berkeley Mono")
@@ -87,6 +87,7 @@
   (dont-talk-to-computers-modes '(vterm-mode-hook comint-mode-hook erc-mode-hook))
   :config
   (set-face-attribute 'dont-talk-to-computers-face nil
+                      ;; https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DepartureMono.zip
                       :font "DepartureMono Nerd Font Mono"
                       :height 110)
   (dont-talk-to-computers-mode 1))
