@@ -22,7 +22,10 @@
   :config
   (set-face-foreground 'why-this-face "#007777")
   (set-face-background 'why-this-annotate-heat-map-cold "#E1FAFF")
-  (set-face-background 'why-this-annotate-heat-map-warm "#F8E8E8"))
+  (set-face-background 'why-this-annotate-heat-map-warm "#F8E8E8")
+  (set-face-attribute 'why-this-face nil
+                      :font "DepartureMono Nerd Font Mono"
+                      :height 110))
 
 (use-package git-gutter
   :hook (prog-mode . git-gutter-mode)

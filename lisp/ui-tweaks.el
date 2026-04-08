@@ -86,11 +86,11 @@
   :custom
   (dont-talk-to-computers-modes '(vterm-mode-hook comint-mode-hook erc-mode-hook))
   :config
+  (set-face-attribute 'dont-talk-to-computers-face nil
+                      :font "DepartureMono Nerd Font Mono"
+                      :height 110)
   (dont-talk-to-computers-mode 1))
 
-(set-face-attribute 'dont-talk-to-computers-face nil
-                    :font "DepartureMono Nerd Font Mono"
-                    :height 110)
 
 (set-face-attribute 'default nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
 (set-face-attribute 'fixed-pitch nil :font starmacs/fixed-pitch-font :height starmacs/fixed-pitch-height)
