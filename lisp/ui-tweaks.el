@@ -83,8 +83,6 @@
 (use-package dont-talk-to-computers
   :vc (:url "https://github.com/isomatter-labs/dont-talk-to-computers" :rev :newest)
   :ensure t
-  :custom
-  (dont-talk-to-computers-modes '(vterm-mode-hook comint-mode-hook erc-mode-hook))
   :config
   (set-face-attribute 'dont-talk-to-computers-face nil
                       ;; https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DepartureMono.zip
