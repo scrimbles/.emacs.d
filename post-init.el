@@ -18,14 +18,14 @@
 
 (require 'lisp-ide)   ; settings for better LISP development (including elisp)
 (require 'lsp)        ; modern LSP usage, like any modern editor
-(require 'numerical) ; tools for statistical analysis
+(require 'numerical)  ; tools for statistical analysis
 (require 'submode)    ; detect embedded SQL and HTML
 
 (require 'completion) ; company, copilot, etc. -- anything that completes user input
 
 ;; (require 'keymap)
 (require 'packages)   ; misc packages that require little enough configuration that they don't require their own module
-(require 'news)       ; configure `Newstcker'
+(require 'news)       ; configure `Newsticker'
 
 (require 'welcome)    ; welcome dashboard a la Doom, but with /waaaaaay/ fewer moving parts
 (require 'ui-tweaks)  ; theme and other cosmetic changes
