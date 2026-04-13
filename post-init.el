@@ -22,7 +22,6 @@
 (require 'submode)    ; detect embedded SQL and HTML
 
 (require 'completion) ; company, copilot, etc. -- anything that completes user input
-(require 'ai)
 
 ;; (require 'keymap)
 (require 'packages)   ; misc packages that require little enough configuration that they don't require their own module
