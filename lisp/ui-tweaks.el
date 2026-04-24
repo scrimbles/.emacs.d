@@ -86,7 +86,7 @@
   :config
   (set-face-attribute 'dont-talk-to-computers-face nil
                       ;; https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DepartureMono.zip
-                      :font "DepartureMono Nerd Font Mono"
+                      :font "Interlisp"
                       :height 110)
   (dont-talk-to-computers-mode 1))
 
