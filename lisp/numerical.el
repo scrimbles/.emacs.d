@@ -57,8 +57,8 @@
 
 ;;; Julia
 (use-package vterm :ensure t)
-(use-package julia-repl)
-(use-package eglot-jl)
+(use-package julia-repl :ensure t)
+(use-package eglot-jl :ensure t)
 (use-package julia-mode
   :mode "\\.jl\\'"
   :interpreter ("julia" . julia-mode)
@@ -69,10 +69,10 @@
   (add-hook 'julia-mode-hook 'eglot-ensure)
   (add-hook 'julia-mode-hook (lambda () (setq julia-repl-set-terminal-backend 'vterm))))
 
-(setq eglot-jl-julia-command "/usr/local/bin/julia")
+(setq eglot-jl-julia-command (expand-file-name "~/.juliaup/bin/julia"))
 (setq julia-repl-executable-records
-      '((default "~/.juliaup/bin/julia")
-        (master "~/.juliaup/bin/julia")))
+      `((default ,(expand-file-name "julia" (expand-file-name ".juliaup/bin" "~")))
+        (master ,(expand-file-name "julia" (expand-file-name ".juliaup/bin" "~")))))
 
 ;;; Fortran 90+
 (add-to-list 'eglot-server-programs '(f90-mode . ("fortls" "--notify_init" "--nthreads=4")))
