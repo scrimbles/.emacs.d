@@ -27,16 +27,16 @@
 ;;   :config
 ;;   (load-theme 'acme t))
 
-;; (use-package squeak-theme
-;;   :vc (:url "https://github.com/isomatter-labs/squeak-theme" :rev :newest)
-;;   :ensure t
-;;   :config
-;;   (load-theme 'squeak t))
-
-(use-package doom-themes
+(use-package squeak-theme
+  :vc (:url "https://github.com/isomatter-labs/squeak-theme" :rev :newest)
   :ensure t
   :config
-  (load-theme 'doom-one))
+  (load-theme 'squeak t))
+
+;; (use-package doom-themes
+;;   :ensure t
+;;   :config
+;;   (load-theme 'doom-one))
 
 (use-package base-line
   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
@@ -86,8 +86,8 @@
   :config
   (set-face-attribute 'dont-talk-to-computers-face nil
                       ;; https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DepartureMono.zip
-                      :font "Interlisp"
-                      :height 110)
+                      :font "VGA"'
+                      :height 130)
   (dont-talk-to-computers-mode 1))
 
 
