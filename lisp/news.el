@@ -26,10 +26,6 @@
          "https://triapul.cz/feed/english.xml"
          nil
          3600)
-        ("Magic 9 Ball"
-         "https://snac.lab8.cz/magic9ball.rss"
-         nil
-         3600)
         ("Martin Fowler :: Blog"
          "https://martinfowler.com/feed.atom"
          nil

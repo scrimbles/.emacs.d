@@ -22,13 +22,13 @@
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 ;; (use-package acme-theme
-;;   :vc (:url "https://github.com/noonels/emac" :rev :newest)
+;;   :vc (:url "https://github.com/scrimbles/emac" :rev :newest)
 ;;   :ensure t
 ;;   :config
 ;;   (load-theme 'acme t))
 
 (use-package squeak-theme
-  :vc (:url "https://github.com/isomatter-labs/squeak-theme" :rev :newest)
+  :vc (:url "https://github.com/scrimbles/squeak-theme" :rev :newest)
   :ensure t
   :config
   (load-theme 'squeak t))
@@ -86,7 +86,7 @@
   :config
   (set-face-attribute 'dont-talk-to-computers-face nil
                       ;; https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DepartureMono.zip
-                      :font "VGA"'
+                      :font "Spleen 8x16"
                       :height 130)
   (dont-talk-to-computers-mode 1))
 
