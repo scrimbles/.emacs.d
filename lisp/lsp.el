@@ -13,7 +13,8 @@
 (use-package tree-sitter
   :ensure t
   :config
-  (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode)))
+  (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode))
+  (add-to-list 'major-mode-remap-alist '(ruby-mode . ruby-ts-mode)))
 
 (use-package tree-sitter-langs
   :ensure )
@@ -35,6 +36,8 @@
   (f90-mode . eglot-ensure)
   (zig-mode . eglot-ensure)
   (haskell-mode . eglot-ensure)
+  (ruby-mode . eglot-ensure)
+  (ruby-ts-mode . eglot-ensure)
   :config
   (setq lsp-prefer-flymake nil)
   (setq flymake-show-diagnostics-at-end-of-line t)

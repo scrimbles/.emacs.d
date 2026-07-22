@@ -21,22 +21,11 @@
                 comint-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;; (use-package acme-theme
-;;   :vc (:url "https://github.com/scrimbles/emac" :rev :newest)
-;;   :ensure t
-;;   :config
-;;   (load-theme 'acme t))
-
 (use-package squeak-theme
   :vc (:url "https://github.com/scrimbles/squeak-theme" :rev :newest)
   :ensure t
   :config
   (load-theme 'squeak t))
-
-;; (use-package doom-themes
-;;   :ensure t
-;;   :config
-;;   (load-theme 'doom-one))
 
 (use-package base-line
   :vc (:url "https://github.com/isomatter-labs/base-line" :rev :newest)
